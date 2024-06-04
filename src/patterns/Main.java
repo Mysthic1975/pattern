@@ -14,11 +14,11 @@ public class Main {
         singleton.doSomething();
         System.out.println("(Das war das " + Singleton.class.getSimpleName() + "-Pattern)"); // Für das Singleton-Pattern
 
-        // Verwendung des Factory-Patterns
-        ShapeFactory shapeFactory = new ShapeFactory();
+        // Verwendung des Factory-Patterns durch das Singleton-Pattern
+        ShapeFactory shapeFactory = ShapeFactory.getInstance();
         Shape rectangle = shapeFactory.getShape("RECTANGLE");
         rectangle.draw();
-        System.out.println("(Das war das " + ShapeFactory.class.getSimpleName() + "-Pattern)"); // Für das Factory-Pattern
+        System.out.println("(Das war das Factory-Pattern durch das Singleton-Pattern)");
 
         // Verwendung des Builder-Patterns
         Pizza pizza = new Pizza.Builder()
